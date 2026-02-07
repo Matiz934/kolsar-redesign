@@ -101,9 +101,11 @@ const widgetStyles = `
 
 .reviews-header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     margin-bottom: var(--spacing-2xl);
+    gap: var(--spacing-lg);
 }
 
 .reviews-header h3 {
@@ -115,11 +117,14 @@ const widgetStyles = `
 .write-review-btn {
     background: var(--color-accent-primary);
     color: var(--color-bg-primary);
-    padding: var(--spacing-sm) var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-xl);
     border-radius: var(--radius-md);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .write-review-btn:hover {
