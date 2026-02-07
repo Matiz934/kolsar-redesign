@@ -3701,15 +3701,7 @@ ul {
     animation: floatEnhanced 6s ease-in-out infinite;
 }
 
-/* Glow effect for accent elements */
-@keyframes glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(181, 211, 52, 0.3); }
-    50% { box-shadow: 0 0 40px rgba(181, 211, 52, 0.6); }
-}
 
-.text-gradient {
-    animation: glow 3s ease-in-out infinite;
-}
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
