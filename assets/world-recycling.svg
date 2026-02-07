@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- Background circle -->
+  <circle cx="150" cy="150" r="140" fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- Left half - Green Nature -->
+  <path d="M 150 10 A 140 140 0 0 1 150 290 L 150 150 Z" fill="#B5D334" opacity="0.3"/>
+  
+  <!-- Right half - Gray Industry -->
+  <path d="M 150 10 A 140 140 0 0 0 150 290 L 150 150 Z" fill="#666666" opacity="0.3"/>
+  
+  <!-- Center dividing line -->
+  <line x1="150" y1="10" x2="150" y2="290" stroke="#333" stroke-width="2"/>
+  
+  <!-- Recycling symbol in center -->
+  <g transform="translate(150, 150)">
+    <!-- Three arrows forming recycling symbol -->
+    <g transform="scale(1.5)">
+      <!-- Arrow 1 -->
+      <path d="M 0,-30 L -5,-20 L -2,-20 L -2,0 L 2,0 L 2,-20 L 5,-20 Z" 
+            fill="#B5D334" transform="rotate(0)"/>
+      
+      <!-- Arrow 2 -->
+      <path d="M 0,-30 L -5,-20 L -2,-20 L -2,0 L 2,0 L 2,-20 L 5,-20 Z" 
+            fill="#B5D334" transform="rotate(120)"/>
+      
+      <!-- Arrow 3 -->
+      <path d="M 0,-30 L -5,-20 L -2,-20 L -2,0 L 2,0 L 2,-20 L 5,-20 Z" 
+            fill="#B5D334" transform="rotate(240)"/>
+      
+      <!-- Center circle -->
+      <circle cx="0" cy="0" r="12" fill="none" stroke="#B5D334" stroke-width="3"/>
+    </g>
+  </g>
+  
+  <!-- Decorative elements - Nature side (left) -->
+  <g opacity="0.6">
+    <circle cx="80" cy="80" r="8" fill="#4CAF50"/>
+    <circle cx="100" cy="120" r="6" fill="#8BC34A"/>
+    <circle cx="70" cy="150" r="7" fill="#4CAF50"/>
+    <circle cx="90" cy="180" r="5" fill="#8BC34A"/>
+    <circle cx="110" cy="220" r="6" fill="#4CAF50"/>
+  </g>
+  
+  <!-- Decorative elements - Industry side (right) -->
+  <g opacity="0.6">
+    <rect x="210" y="70" width="10" height="25" fill="#999"/>
+    <rect x="195" y="80" width="8" height="20" fill="#777"/>
+    <rect x="223" y="75" width="7" height="22" fill="#888"/>
+    <rect x="200" y="180" width="12" height="30" fill="#999"/>
+    <rect x="218" y="185" width="10" height="25" fill="#777"/>
+  </g>
+  
+  <!-- Text labels -->
+  <text x="75" y="280" font-family="Arial, sans-serif" font-size="14" fill="#B5D334" text-anchor="middle">Natura</text>
+  <text x="225" y="280" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">Przemysł</text>
+</svg>

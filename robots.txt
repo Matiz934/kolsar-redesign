@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://kolsar.pl/sitemap.xml
+
+# Block admin/system directories if any exist
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /.system_generated/
+
+# Allow all bots to crawl CSS, JS, and images
+Allow: /assets/
+Allow: /styles.css
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
