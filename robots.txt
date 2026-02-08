@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://kolsar.pl/sitemap.xml
+Sitemap: https://matiz934.github.io/kolsar-redesign/sitemap.xml
 
 # Block admin/system directories if any exist
 Disallow: /admin/
