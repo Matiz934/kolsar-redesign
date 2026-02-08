@@ -2059,6 +2059,31 @@ ul {
         right: -10px;
         min-width: 180px;
     }
+
+    /* Lightbox mobile styles */
+    .lightbox-nav {
+        width: 45px;
+        height: 45px;
+    }
+
+    .lightbox-prev {
+        left: var(--spacing-md);
+    }
+
+    .lightbox-next {
+        right: var(--spacing-md);
+    }
+
+    .lightbox-close {
+        top: var(--spacing-md);
+        right: var(--spacing-md);
+        width: 40px;
+        height: 40px;
+    }
+
+    .lightbox-image {
+        max-height: 70vh;
+    }
 }
 
 /* ================================
@@ -3877,28 +3902,3 @@ body.lightbox-open {
     overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .lightbox-nav {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .lightbox-prev {
-        left: var(--spacing-md);
-    }
-    
-    .lightbox-next {
-        right: var(--spacing-md);
-    }
-    
-    .lightbox-close {
-        top: var(--spacing-md);
-        right: var(--spacing-md);
-        width: 40px;
-        height: 40px;
-    }
-    
-    .lightbox-image {
-        max-height: 70vh;
-    }
-}

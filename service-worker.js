@@ -17,11 +17,7 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => {
-                console.log('Caching static assets');
                 return cache.addAll(STATIC_ASSETS);
-            })
-            .catch((err) => {
-                console.error('Cache installation failed:', err);
             })
     );
     self.skipWaiting();
@@ -98,6 +94,5 @@ self.addEventListener('sync', (event) => {
 });
 
 async function syncContactForm() {
-    // Implementation for background sync
-    console.log('Background sync triggered');
+    // Background sync implementation placeholder
 }

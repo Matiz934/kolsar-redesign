@@ -51,11 +51,10 @@
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
     <link rel="manifest" href="/manifest.json">
-    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Resource Hints & Preloads -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,14 +65,11 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="assets/kolsar-logo.png" as="image" fetchpriority="high">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
     
     <!-- Prefetch next pages -->
     <link rel="prefetch" href="punkt-skupu.html">
 
-    <!-- Fonts with display=swap for better performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
@@ -350,7 +346,7 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <img src="assets/kolsar-logo.png" alt="Kolsar Recykling" class="logo-image" width="180" height="50" fetchpriority="high">
             </a>
             <nav class="nav" id="nav">
@@ -798,7 +794,7 @@
                 <h3>Nasza lokalizacja</h3>
                 <div class="map-wrapper">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2450.234567890123!2d19.80771311573562!3d51.74421797967234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bcb6c0a8b8c8d%3A0x1234567890abcdef!2sZielona%201a%2C%2095-040%20Koluszki!5e0!3m2!1spl!2spl!4v1234567890123!5m2!1spl!2spl"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2929.669588094948!2d19.808900776890763!3d51.755011892584065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bd5584ba7d231%3A0xf1bb490b7c0a7636!2sKOLSAR%20Group!5e1!3m2!1spl!2spl!4v1770512615981!5m2!1spl!2spl"
                         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
@@ -812,7 +808,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <img src="assets/kolsar-logo.png" alt="Kolsar Recykling" class="logo-image footer-logo" width="150" height="40" loading="lazy">
             </a>
                     <p class="footer-tagline">Dla Ziemi, dla Ciebie!</p>
@@ -923,11 +919,8 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('service-worker.js')
-                    .then((registration) => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch((registrationError) => {
-                        console.log('SW registration failed: ', registrationError);
+                    .catch(() => {
+                        // Service worker registration failed silently
                     });
             });
         }
@@ -982,12 +975,38 @@
             });
         });
 
-        // Form submission
+        // Form submission with Formspree integration
         const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Dziękujemy za wiadomość! Skontaktujemy się wkrótce.');
-            contactForm.reset();
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Wysyłanie...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Dziękujemy za wiadomość! Skontaktujemy się wkrótce.');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Błąd wysyłania');
+                }
+            } catch (error) {
+                alert('Wystąpił błąd podczas wysyłania. Prosimy spróbować ponownie lub zadzwonić: 791 113 568');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         });
 
         // Cookie Consent Banner
