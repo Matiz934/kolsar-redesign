@@ -246,7 +246,7 @@ ul {
     position: relative;
 }
 
-.nav-item.has-dropdown > .nav-link::after {
+.nav-item.has-dropdown>.nav-link::after {
     content: '';
     display: inline-block;
     width: 0;
@@ -259,7 +259,7 @@ ul {
     transition: transform var(--transition-fast);
 }
 
-.nav-item.has-dropdown:hover > .nav-link::after {
+.nav-item.has-dropdown:hover>.nav-link::after {
     transform: rotate(180deg);
 }
 
@@ -717,7 +717,7 @@ ul {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
     transition: left 0.7s ease;
 }
 
@@ -762,9 +762,11 @@ ul {
 }
 
 .service-title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     font-weight: 600;
     margin-bottom: var(--spacing-md);
+    min-height: 2.5em;
+    line-height: 1.25;
 }
 
 .service-description {
@@ -2030,86 +2032,86 @@ ul {
     letter-spacing: 0.5px;
 }
 
-    .tooltip-number {
-        font-size: var(--font-size-lg);
-        font-weight: 600;
-        color: var(--color-accent-primary);
-    }
+.tooltip-number {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-accent-primary);
+}
 
-    /* Update floating phone to work within container */
-    .floating-phone-container .floating-phone {
-        position: relative;
-        bottom: auto;
-        right: auto;
-    }
+/* Update floating phone to work within container */
+.floating-phone-container .floating-phone {
+    position: relative;
+    bottom: auto;
+    right: auto;
+}
 
-    /* ================================
+/* ================================
        BACK TO TOP BUTTON
     ================================ */
+.back-to-top {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    width: 50px;
+    height: 50px;
+    background: var(--color-accent-gradient);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-primary);
+    box-shadow: 0 4px 15px rgba(124, 179, 66, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 998;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateX(-50%) translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(124, 179, 66, 0.6);
+}
+
+
+
+.back-to-top svg {
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-3px);
+}
+
+.back-to-top-progress {
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: conic-gradient(var(--color-accent-primary) var(--scroll-progress, 0%), transparent var(--scroll-progress, 0%));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.back-to-top.visible .back-to-top-progress {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
     .back-to-top {
-        position: fixed;
-        bottom: var(--spacing-xl);
-        left: 50%;
-        transform: translateX(-50%) translateY(20px);
-        width: 50px;
-        height: 50px;
-        background: var(--color-accent-gradient);
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--color-text-primary);
-        box-shadow: 0 4px 15px rgba(124, 179, 66, 0.4);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 998;
+        bottom: var(--spacing-lg);
+        width: 45px;
+        height: 45px;
     }
-
-    .back-to-top.visible {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(-50%) translateY(0);
-    }
-
-    .back-to-top:hover {
-        transform: translateX(-50%) translateY(-5px) scale(1.1);
-        box-shadow: 0 8px 25px rgba(124, 179, 66, 0.6);
-    }
-
-
-
-    .back-to-top svg {
-        transition: transform 0.3s ease;
-    }
-
-    .back-to-top:hover svg {
-        transform: translateY(-3px);
-    }
-
-    .back-to-top-progress {
-        position: absolute;
-        inset: -3px;
-        border-radius: 50%;
-        background: conic-gradient(var(--color-accent-primary) var(--scroll-progress, 0%), transparent var(--scroll-progress, 0%));
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .back-to-top.visible .back-to-top-progress {
-        opacity: 1;
-    }
-
-    @media (max-width: 768px) {
-        .back-to-top {
-            bottom: var(--spacing-lg);
-            width: 45px;
-            height: 45px;
-        }
-    }
+}
 
 @media (max-width: 768px) {
     .floating-phone-container {
@@ -3973,4 +3975,3 @@ ul {
 body.lightbox-open {
     overflow: hidden;
 }
-
