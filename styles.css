@@ -761,18 +761,18 @@ ul {
     color: var(--color-accent-primary);
 }
 
-.service-title {
-    font-size: var(--font-size-lg);
+.service-card .service-title {
+    font-size: 1rem !important;
     font-weight: 600;
-    margin-bottom: var(--spacing-md);
-    min-height: 2.5em;
-    line-height: 1.25;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
 }
 
-.service-description {
+.service-card .service-description {
     color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    font-size: var(--font-size-sm);
 }
 
 .service-link {
@@ -2429,7 +2429,7 @@ ul {
     text-align: center;
 }
 
-.service-title {
+.service-hero .service-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     margin-bottom: var(--spacing-md);
