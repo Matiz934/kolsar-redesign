@@ -2,12 +2,12 @@
   "name": "Kolsar Recykling - Skup Złomu Koluszki",
   "short_name": "Kolsar",
   "description": "Profesjonalny skup złomu i metali kolorowych w Koluszkach. Najlepsze ceny, uczciwa waga, szybka płatność.",
-  "start_url": "/",
+  "start_url": "/kolsar-redesign/",
   "display": "standalone",
   "background_color": "#0f0f0f",
   "theme_color": "#7cb342",
   "orientation": "portrait-primary",
-  "scope": "/",
+  "scope": "/kolsar-redesign/",
   "lang": "pl-PL",
   "icons": [
     {

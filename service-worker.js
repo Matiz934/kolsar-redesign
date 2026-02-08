@@ -1,15 +1,16 @@
 // Service Worker for Kolsar Recykling
 const CACHE_NAME = 'kolsar-v1';
+const BASE_PATH = '/kolsar-redesign';
 const STATIC_ASSETS = [
-    '/',
-    '/index.html',
-    '/styles.css',
-    '/google-reviews-widget.js',
-    '/assets/kolsar-logo.png',
-    '/assets/world-graphic.png',
-    '/assets/logo-icon.svg',
-    '/favicon.svg',
-    '/favicon.png'
+    BASE_PATH + '/',
+    BASE_PATH + '/index.html',
+    BASE_PATH + '/styles.css',
+    BASE_PATH + '/google-reviews-widget.js',
+    BASE_PATH + '/assets/kolsar-logo.png',
+    BASE_PATH + '/assets/world-graphic.png',
+    BASE_PATH + '/assets/logo-icon.svg',
+    BASE_PATH + '/favicon.svg',
+    BASE_PATH + '/favicon.png'
 ];
 
 // Install event - cache static assets
@@ -41,7 +42,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     // Skip non-GET requests
     if (event.request.method !== 'GET') return;
-    
+
     // Skip external requests (Google Fonts, Maps, etc.)
     if (!event.request.url.startsWith(self.location.origin)) {
         return;
@@ -79,7 +80,7 @@ self.addEventListener('fetch', (event) => {
                     .catch(() => {
                         // Network failed, try to return offline page or error
                         if (event.request.destination === 'document') {
-                            return caches.match('/index.html');
+                            return caches.match(BASE_PATH + '/index.html');
                         }
                     });
             })
