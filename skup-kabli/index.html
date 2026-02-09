@@ -81,30 +81,34 @@
     <header class="header scrolled">
         <div class="container">
             <a href="../" class="logo">
-                <img src="../assets/kolsar-logo.png" alt="Kolsar Recykling" class="logo-image">
+                <img src="../assets/kolsar-logo.png" alt="Kolsar Recykling" class="logo-image" width="180" height="50"
+                    fetchpriority="high">
             </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="../" class="nav-link">Home</a></li>
+                    <li class="nav-item has-dropdown">
+                        <a href="../#uslugi" class="nav-link">Usługi</a>
+                        <ul class="nav-dropdown">
+                            <li><a href="../skup-miedzi/" class="nav-dropdown-link">Skup miedzi</a></li>
+                            <li><a href="../skup-aluminium/" class="nav-dropdown-link">Skup aluminium</a></li>
+                            <li><a href="../skup-katalizatorow/" class="nav-dropdown-link">Skup katalizatorów</a></li>
+                            <li><a href="../skup-kabli/" class="nav-dropdown-link">Skup kabli</a></li>
+                            <li><a href="../skup-makulatury/" class="nav-dropdown-link">Skup makulatury</a></li>
+                            <li><a href="../kontenerowy-wywoz-odpadow/" class="nav-dropdown-link">Wywóz odpadów</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../#o-nas" class="nav-link">O nas</a></li>
+                    <li><a href="../#cennik" class="nav-link">Cennik</a></li>
+                    <li><a href="../#galeria" class="nav-link">Galeria</a></li>
+                    <li><a href="../#kontakt" class="nav-link nav-link--cta">Kontakt</a></li>
+                </ul>
+            </nav>
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <nav class="nav" id="nav">
-                <a href="../" class="nav-link">Home</a>
-                <div class="nav-dropdown">
-                    <a href="../#uslugi" class="nav-link nav-dropdown-toggle">Usługi</a>
-                    <div class="nav-dropdown-menu">
-                        <ul>
-                            <li><a href="../skup-miedzi/" class="nav-dropdown-link">Skup miedzi</a></li>
-                            <li><a href="../skup-aluminium/" class="nav-dropdown-link">Skup aluminium</a></li>
-                            <li><a href="../skup-katalizatorow/" class="nav-dropdown-link">Skup katalizatorów</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="../#o-nas" class="nav-link">O nas</a>
-                <a href="../#cennik" class="nav-link">Cennik</a>
-                <a href="../#galeria" class="nav-link">Galeria</a>
-                <a href="../#kontakt" class="btn btn-primary nav-cta">Kontakt</a>
-            </nav>
         </div>
     </header>
 
@@ -259,6 +263,7 @@
                         <li><a href="../skup-katalizatorow/">Skup katalizatorów</a></li>
                         <li><a href="../skup-kabli/">Skup kabli</a></li>
                         <li><a href="../skup-makulatury/">Skup makulatury</a></li>
+                        <li><a href="../kontenerowy-wywoz-odpadow/">Wywóz odpadów</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
